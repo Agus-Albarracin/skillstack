@@ -173,6 +173,15 @@ export const skills: Skill[] = [
       "https://github.com/netresearch/github-project-skill/tree/main/skills/github-project",
   },
   {
+    name: "atomic-commits",
+    category: "Infraestructura",
+    area: "Git",
+    description:
+      "Cambios coherentes, staging preciso y Conventional Commits para crear un historial local pequeño y revisable.",
+    source:
+      "https://github.com/Agus-Albarracin/GSFS/tree/main/.agents/skills/atomic-commits",
+  },
+  {
     name: "otel-instrumentation",
     category: "Infraestructura",
     area: "Observabilidad",
