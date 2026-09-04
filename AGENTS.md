@@ -20,6 +20,7 @@ provided by a skill.
 
 | Skill | Trigger | Path |
 | --- | --- | --- |
+| `frontend-ui-engineering` | Building or modifying user-facing interfaces, pages, components, responsive layouts, accessibility, interaction states, or UI quality. | `.agents/skills/frontend-ui-engineering/SKILL.md` |
 | `nextjs-specialist` | Next.js 16 App Router routes, layouts, React Server/Client Component boundaries, Server Actions, Cache Components, Route Handlers, or OpenNext/Cloudflare Workers deployment. | `.agents/skills/nextjs-specialist/SKILL.md` |
 | `vercel-react-best-practices` | React components, Next.js routes, layouts, data fetching, rendering, performance, or bundle changes. | `.agents/skills/vercel-react-best-practices/SKILL.md` |
 | `tailwind-best-practices` | Writing, reviewing, or refactoring Tailwind classes, design tokens, responsive layouts, or UI styling. | `.agents/skills/tailwind-best-practices/SKILL.md` |
