@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "name": "skillstack-skill-creator",
+  "version": "1.0.0",
+  "status": "native",
+  "visibility": "internal",
+  "maintainer": "skillstack",
+  "createdAt": "2026-09-04",
+  "updatedAt": "2026-09-04",
+  "abstract": "Internal governance for creating, migrating, validating, and distributing Skillstack skills.",
+  "sources": []
+}

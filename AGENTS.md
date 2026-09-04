@@ -16,6 +16,12 @@ provided by a skill.
 6. Do not push, pull, fetch, open a pull request, merge, rebase, tag, amend, or
    change remotes unless the user requests that operation separately.
 
+## Internal Skill Governance
+
+Before proposing, creating, migrating, or modifying a Skillstack skill, read
+`.agents/internal-skills/skillstack-skill-creator/SKILL.md`. This internal skill
+defines the business contract for Skillstack skills; it is never vendorized.
+
 ## Skills
 
 | Skill | Trigger | Path |
@@ -26,6 +32,7 @@ provided by a skill.
 | `tailwind-best-practices` | Writing, reviewing, or refactoring Tailwind classes, design tokens, responsive layouts, or UI styling. | `.agents/skills/tailwind-best-practices/SKILL.md` |
 | `optimise-seo` | Metadata, canonical URLs, sitemaps, robots rules, JSON-LD, redirects, indexing, social previews, security headers, or Core Web Vitals. | `.agents/skills/optimise-seo/SKILL.md` |
 | `atomic-commits` | Planning, staging, creating, reviewing, or verifying local commits. | `.agents/skills/atomic-commits/SKILL.md` |
+| `skillstack-skill-creator` | Creating, migrating, validating, or changing a Skillstack skill or its distribution boundary. Internal only. | `.agents/internal-skills/skillstack-skill-creator/SKILL.md` |
 
 ## Project Checks
 

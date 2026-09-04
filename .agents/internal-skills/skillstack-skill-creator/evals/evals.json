@@ -1,0 +1,45 @@
+{
+  "skill_name": "skillstack-skill-creator",
+  "evals": [
+    {
+      "id": "public-skill-boundary",
+      "prompt": "Crea una skill pública para revisar contratos de API.",
+      "expected_output": "A public skill tree with an operational SKILL.md and only runtime resources required by the workflow.",
+      "assertions": [
+        "The skill is classified as public before files are proposed.",
+        "The public package excludes metadata.json and evals.",
+        "The response explains which optional directories were omitted."
+      ]
+    },
+    {
+      "id": "internal-governance-boundary",
+      "prompt": "Crea una skill para las reglas internas de aprobación de lanzamientos.",
+      "expected_output": "An internal-only skill under .agents/internal-skills with governance metadata and no public vendorization path.",
+      "assertions": [
+        "The skill is classified as internal.",
+        "The response does not add it to the public catalog.",
+        "The tree can include internal metadata and evals."
+      ]
+    },
+    {
+      "id": "external-migration",
+      "prompt": "Adapta una skill externa de seguridad para que sea nativa de Skillstack.",
+      "expected_output": "A migrating skill plan that identifies immutable sources, extracts reusable decisions, and avoids copying the source manual.",
+      "assertions": [
+        "The source uses an immutable revision rather than a moving branch.",
+        "The resulting guidance is adapted to Skillstack's operating model.",
+        "The plan identifies the conditions required to declare the skill native."
+      ]
+    },
+    {
+      "id": "critical-rule-validation",
+      "prompt": "Crea una skill cuyo requisito CRITICAL es no exponer secretos en logs.",
+      "expected_output": "A skill plan with an explicit critical rule and an observable validation strategy.",
+      "assertions": [
+        "The CRITICAL label expresses impact, not reading order.",
+        "The plan proposes a test, linter, or eval that can detect violations.",
+        "The rule remains in the SKILL.md business contract."
+      ]
+    }
+  ]
+}
