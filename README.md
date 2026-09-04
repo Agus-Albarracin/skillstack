@@ -51,7 +51,7 @@ Este modelo evita depender de configuraciones globales no compartidas. La versi√
 
 ```
 
-| Recurso              | Tipo       | Contrato                                                                                                                            | 
+| Recurso              | Tipo       | Contrato                                                                                                                            |
 | :------------------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------:|
 | `SKILL.md`           | Markdown   | Define el alcance compartido, los disparadores y las decisiones operativas de la skill.                                             |
 | `references/`        | Directorio | Contiene patrones, gu√≠as y procedimientos que se cargan solo cuando la tarea los necesita.                                          |
