@@ -1,0 +1,17 @@
+---
+title: Respect Authorization and Remote Boundaries
+priority: CRITICAL
+tags: authorization, remote, safety
+---
+
+# Respect Authorization and Remote Boundaries
+
+Treat planning, staging, committing, and remote operations as separate permissions.
+
+- Inspect and propose a commit plan when asked to review or plan changes.
+- Stage and create local commits only when the user explicitly asks to commit or clearly authorizes the operation.
+- Do not push, pull, fetch, open a pull request, merge, rebase, tag, amend, or change remotes unless separately requested.
+- Do not alter Git identity or repository configuration without explicit approval.
+- Stop before a destructive or history-rewriting operation and request authorization.
+
+An instruction to make atomic commits authorizes local commits for in-scope changes only. It does not authorize including pre-existing user changes unless the user assigns them to the commit.
