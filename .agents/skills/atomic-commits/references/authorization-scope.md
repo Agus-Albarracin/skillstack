@@ -1,9 +1,3 @@
----
-title: Respect Authorization and Remote Boundaries
-priority: CRITICAL
-tags: authorization, remote, safety
----
-
 # Respect Authorization and Remote Boundaries
 
 Treat planning, staging, committing, and remote operations as separate permissions.

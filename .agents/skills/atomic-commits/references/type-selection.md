@@ -1,9 +1,3 @@
----
-title: Select the Commit Type and Scope
-priority: HIGH
-tags: type, scope, classification
----
-
 # Select the Commit Type and Scope
 
 Choose the type by the primary reason for the change, not by the file extension or the fact that something was edited.

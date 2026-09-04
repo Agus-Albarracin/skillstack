@@ -11,25 +11,28 @@ Create the smallest coherent commits that remain honest, reviewable, and usable.
 
 Use this skill to inspect and group changes, stage a precise group, select a Conventional Commit message, create authorized local commits, and verify the resulting history.
 
-## Reference Categories by Priority
+## Reference Router
 
-| Priority | Responsibility | Reference |
-| --- | --- | --- |
-| 1 | Authorization and remote boundaries | `authorization-scope` |
-| 2 | Working-tree and secret inspection | `inspect-safety` |
-| 3 | Atomic grouping and dependency order | `group-atomic` |
-| 4 | Conventional Commit message grammar | `message-format` |
-| 5 | Type and scope classification | `type-selection` |
-| 6 | Precise staging without data loss | `stage-preserve` |
-| 7 | Verification and evidence | `verify-report` |
+`priority` measures the impact of ignoring a guide. `dependsOn` identifies the
+guides that must be resolved first; it never derives order from impact.
+
+| Reference | Priority | dependsOn | Use when |
+| --- | --- | --- | --- |
+| [`authorization-scope`](references/authorization-scope.md) | `CRITICAL` | — | Always, before planning or mutating Git state. |
+| [`inspect-safety`](references/inspect-safety.md) | `CRITICAL` | `authorization-scope` | Inspecting a working tree or deciding what belongs in a commit. |
+| [`group-atomic`](references/group-atomic.md) | `HIGH` | `inspect-safety` | Grouping assigned changes into independent commits. |
+| [`type-selection`](references/type-selection.md) | `HIGH` | `group-atomic` | Selecting a Conventional Commit type and scope. |
+| [`message-format`](references/message-format.md) | `HIGH` | `type-selection` | Writing or reviewing a commit message. |
+| [`stage-preserve`](references/stage-preserve.md) | `HIGH` | `group-atomic`, `message-format` | Staging a group without absorbing unrelated work. |
+| [`verify-report`](references/verify-report.md) | `MEDIUM` | `stage-preserve` | Verifying the commit and reporting its evidence. |
 
 ## How to Use
 
-Always read [`references/authorization-scope.md`](references/authorization-scope.md). Then read only the other reference files needed for the current request:
+Always read [`references/authorization-scope.md`](references/authorization-scope.md). Then resolve `dependsOn` and read only the guides needed for the current request:
 
 - Planning only: `inspect-safety`, `group-atomic`, `message-format`, and `type-selection`.
 - Creating commits: all references.
 - Reviewing proposed messages: `message-format` and `type-selection`.
 - Diagnosing staging or hook problems: `stage-preserve` and `verify-report`.
 
-Apply priorities in order when references interact. Never treat this skill as authorization for an action the user did not request.
+Never use `priority` to choose the reading order. Never treat this skill as authorization for an action the user did not request.

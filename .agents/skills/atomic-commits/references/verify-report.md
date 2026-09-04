@@ -1,9 +1,3 @@
----
-title: Verify and Report Each Commit
-priority: MEDIUM
-tags: verification, evidence, reporting
----
-
 # Verify and Report Each Commit
 
 Run focused checks appropriate to the change before committing when feasible. After each commit, verify its subject, changed paths, and repository status. Confirm that unrelated user-owned changes remain untouched.

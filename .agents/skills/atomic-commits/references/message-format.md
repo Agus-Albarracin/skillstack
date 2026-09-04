@@ -1,9 +1,3 @@
----
-title: Format Conventional Commit Messages
-priority: HIGH
-tags: conventional-commits, message, grammar
----
-
 # Format Conventional Commit Messages
 
 Use this subject grammar:

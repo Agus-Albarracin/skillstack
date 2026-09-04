@@ -1,9 +1,3 @@
----
-title: Group Changes Atomically
-priority: HIGH
-tags: grouping, dependencies, reviewability
----
-
 # Group Changes Atomically
 
 Each commit must represent one coherent reason for change and leave the repository in a usable state when practical.

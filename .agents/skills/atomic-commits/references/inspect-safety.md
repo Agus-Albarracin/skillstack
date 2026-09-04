@@ -1,9 +1,3 @@
----
-title: Inspect the Working Tree Safely
-priority: CRITICAL
-tags: inspection, secrets, ownership
----
-
 # Inspect the Working Tree Safely
 
 Before planning or staging, inspect the repository root, current branch, status, staged diff, unstaged diff, untracked files, and recent history. Distinguish changes made for the current task from pre-existing user-owned work.

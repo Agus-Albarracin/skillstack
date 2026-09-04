@@ -1,9 +1,3 @@
----
-title: Stage Precisely Without Data Loss
-priority: HIGH
-tags: staging, preservation, index
----
-
 # Stage Precisely Without Data Loss
 
 Stage explicit paths or reviewed patches belonging only to the current atomic group. Never use broad staging such as `git add .` or `git add -A` in a dirty worktree unless every change has been inspected and assigned to the same commit.
