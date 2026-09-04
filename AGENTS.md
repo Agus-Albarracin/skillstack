@@ -20,6 +20,7 @@ provided by a skill.
 
 | Skill | Trigger | Path |
 | --- | --- | --- |
+| `nextjs-specialist` | Next.js 16 App Router routes, layouts, React Server/Client Component boundaries, Server Actions, Cache Components, Route Handlers, or OpenNext/Cloudflare Workers deployment. | `.agents/skills/nextjs-specialist/SKILL.md` |
 | `vercel-react-best-practices` | React components, Next.js routes, layouts, data fetching, rendering, performance, or bundle changes. | `.agents/skills/vercel-react-best-practices/SKILL.md` |
 | `tailwind-best-practices` | Writing, reviewing, or refactoring Tailwind classes, design tokens, responsive layouts, or UI styling. | `.agents/skills/tailwind-best-practices/SKILL.md` |
 | `optimise-seo` | Metadata, canonical URLs, sitemaps, robots rules, JSON-LD, redirects, indexing, social previews, security headers, or Core Web Vitals. | `.agents/skills/optimise-seo/SKILL.md` |
