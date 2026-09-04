@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,16 +15,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Skillstack — Skills para construir full stack",
-  description:
-    "Una colección curada de skills para diseñar, construir, probar y desplegar aplicaciones full stack.",
-  metadataBase: new URL("https://gsfs.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Skills para proyectos full stack | Skillstack",
+    template: "%s | Skillstack",
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  creator: siteConfig.author.name,
+  alternates: { canonical: "/" },
+  manifest: "/manifest.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Skillstack — Tu stack completo, skill por skill",
-    description:
-      "21 skills open source para construir aplicaciones full stack con mejores prácticas.",
+    title: "Skills para proyectos full stack | Skillstack",
+    description: siteConfig.description,
     type: "website",
-    locale: "es_AR",
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skills para proyectos full stack | Skillstack",
+    description: siteConfig.description,
+  },
+  verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
   },
 };
 

@@ -1,4 +1,5 @@
 import { ArrowRightIcon, ArrowUpRightIcon, SparkIcon } from "@/components/icons";
+import { JsonLd } from "@/components/json-ld";
 import { SkillExplorer } from "@/components/skill-explorer";
 import { skills } from "@/lib/skills";
 
@@ -23,6 +24,7 @@ function Brand() {
 export default function Home() {
   return (
     <main className="overflow-hidden bg-canvas text-ink" id="contenido">
+      <JsonLd />
       <header className="relative z-20 mx-auto flex min-h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <a href="#inicio" aria-label="Skillstack, volver al inicio"><Brand /></a>
         <nav className="flex items-center gap-8 text-sm font-semibold" aria-label="Navegación principal">
