@@ -38,10 +38,12 @@ El flujo esperado es:
 5. Versionarla junto con el código y actualizarla mediante cambios explícitos.
 
 Este modelo evita depender de configuraciones globales no compartidas. La versión efectiva de cada skill queda visible en el repositorio, participa en code review y puede reproducirse en cualquier entorno del equipo.
+
+La descarga pública incluye únicamente los recursos operativos. `metadata.json` es un manifiesto interno de Skillstack: no se descarga ni se necesita para usar una skill vendorized. Si una importación lo incluyera, debe eliminarse del proyecto consumidor.
 <br />
 <br />
 
-## Estructura de una skill nativa
+## Estructura de una skill mantenida por Skillstack
 
 ```text
 <skill-name>/
@@ -55,9 +57,21 @@ Este modelo evita depender de configuraciones globales no compartidas. La versi�
 | :------------------: | :--------: | :----------------------------------------------------------------------------------------------------------------------------------:|
 | `SKILL.md`           | Markdown   | Define el alcance compartido, los disparadores y las decisiones operativas de la skill.                                             |
 | `references/`        | Directorio | Contiene patrones, guías y procedimientos que se cargan solo cuando la tarea los necesita.                                          |
-| `metadata.json`      | JSON       | Declara versión, estado de migración, responsable, fechas y procedencia vigente. El historial detallado permanece en Git.
+| `metadata.json`      | JSON       | Manifiesto interno: declara versión, estado de migración, responsable, fechas y procedencia. No interviene en la ejecución ni se distribuye al consumidor.
 <br />
 <br />
+
+### Paquete público vendorized
+
+```text
+<skill-name>/
+├── SKILL.md       Instrucciones operativas
+├── references/    Documentación necesaria bajo demanda
+├── scripts/       Automatización necesaria, si aplica
+└── assets/        Recursos de salida necesarios, si aplica
+```
+
+`metadata.json` y `evals/` quedan en Skillstack como infraestructura de mantenimiento. El proyecto consumidor identifica la versión incorporada mediante el commit SHA, tag o release que eligió al vendorizar.
 
 ## Convenciones operativas
 
@@ -71,25 +85,21 @@ Skillstack separa el impacto de una regla, su orden de aplicación y el nivel de
 
 Las dependencias forman un grafo sin ciclos: una referencia solo se procesa cuando sus `dependsOn` están resueltos. Esto permite respetar el orden necesario y mantener independientes las guías que no dependen entre sí.
 
-## Contrato de metadata.json
+## Manifiesto interno: metadata.json
+
+`metadata.json` sirve a Skillstack para gobernar la evolución de sus skills. No configura agentes, no se carga durante una tarea y no forma parte del paquete público.
 
 ```json
 {
   "schemaVersion": 1,
-  "name": "nextjs-specialist",
+  "name": "example-skill",
   "version": "1.0.0",
   "status": "native",
   "maintainer": "skillstack",
   "createdAt": "2026-09-04",
   "updatedAt": "2026-09-04",
-  "abstract": "Guidance for Next.js App Router applications.",
-  "sources": [
-    {
-      "repository": "https://github.com/BrewHubPHL/nextjs-specialist",
-      "revision": "1befc905c66aeec38f79811c17b755f7f738d7bc",
-      "reviewedAt": "2026-09-04"
-    }
-  ]
+  "abstract": "A maintained Skillstack skill.",
+  "sources": []
 }
 ```
 
@@ -103,7 +113,7 @@ Las dependencias forman un grafo sin ciclos: una referencia solo se procesa cuan
 | `createdAt`    | string   | Fecha de creación en formato ISO `YYYY-MM-DD`.                                                                               |
 | `updatedAt`    | string   | Fecha de la última modificación de la versión vigente, en formato ISO `YYYY-MM-DD`.                                          |
 | `abstract`     | string   | Resumen corto de la capacidad y el límite de la skill.                                                                       |
-| `sources`      | array    | Orígenes externos relevantes. Puede ser un arreglo vacío cuando la skill no deriva de una fuente externa.                   |
+| `sources`      | array    | Orígenes externos relevantes para la trazabilidad interna. Puede ser un arreglo vacío cuando la skill no deriva de una fuente externa.                   |
 <br />
 
 ### Contrato de sources
