@@ -30,6 +30,7 @@ export default function Home() {
         <nav className="flex items-center gap-8 text-sm font-semibold" aria-label="Navegación principal">
           <a className="hidden text-muted transition-colors hover:text-ink sm:block" href="#catalogo">Catálogo</a>
           <a className="hidden text-muted transition-colors hover:text-ink md:block" href="#metodo">Método</a>
+          <a className="hidden text-muted transition-colors hover:text-ink lg:block" href="/roadmap">Roadmap</a>
           <a className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-5 text-surface" href="#catalogo">
             Explorar <ArrowRightIcon />
           </a>
