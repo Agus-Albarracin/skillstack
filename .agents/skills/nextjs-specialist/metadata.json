@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "name": "nextjs-specialist",
+  "version": "1.0.0",
+  "status": "native",
+  "maintainer": "skillstack",
+  "createdAt": "2026-09-04",
+  "updatedAt": "2026-09-04",
+  "abstract": "Skillstack guidance for building, reviewing, and refactoring Next.js App Router applications.",
+  "sources": [
+    {
+      "repository": "https://github.com/BrewHubPHL/nextjs-specialist",
+      "revision": "1befc905c66aeec38f79811c17b755f7f738d7bc",
+      "reviewedAt": "2026-09-04"
+    }
+  ]
+}
