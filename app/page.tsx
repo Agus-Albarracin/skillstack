@@ -76,7 +76,7 @@ export default function Home() {
             <span className="font-mono text-xs font-bold tracking-widest">LEARN</span>
             <span className="mx-auto mt-10 grid size-16 place-items-center rounded-full bg-ink text-accent"><SparkIcon /></span>
             <strong className="mt-auto font-display text-4xl leading-none font-normal">Master<br />every layer.</strong>
-            <small className="mt-5 font-mono text-xs uppercase">21 skills · v1.0</small>
+            <small className="mt-5 font-mono text-xs uppercase">{skills.length} skills · v1.0</small>
           </div>
         </div>
       </section>

@@ -208,6 +208,15 @@ export const skills: Skill[] = [
     featured: true,
   },
   {
+    name: "optimise-seo",
+    category: "Calidad",
+    area: "SEO técnico",
+    description:
+      "Sitemaps, robots, metadatos, canonicals, datos estructurados, indexación y Core Web Vitals en Next.js.",
+    source:
+      "https://github.com/mblode/agent-skills/tree/main/skills/optimise-seo",
+  },
+  {
     name: "build-reliable-messaging",
     category: "Arquitectura",
     area: "Mensajería confiable",
