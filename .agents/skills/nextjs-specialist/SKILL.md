@@ -1,9 +1,6 @@
 ---
 name: nextjs-specialist
 description: Build, review, and refactor Next.js 16 App Router applications using React Server Components, Server Actions, Cache Components, Route Handlers, and OpenNext. Use for Next.js routes, rendering, mutations, caching, endpoints, or deployment; not generic React outside Next.js.
-metadata:
-  author: skillstack
-  version: "1.1.0"
 ---
 
 # Next.js Specialist
