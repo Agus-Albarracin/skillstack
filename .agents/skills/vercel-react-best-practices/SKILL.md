@@ -9,7 +9,7 @@ metadata:
 
 # Vercel React Best Practices
 
-Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 70 rules across 8 categories, prioritized by impact to guide automated refactoring and code generation.
+Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Contains 70 references across 8 categories, prioritized by impact to guide automated refactoring and code generation.
 
 ## When to Apply
 
@@ -20,7 +20,7 @@ Reference these guidelines when:
 - Refactoring existing React/Next.js code
 - Optimizing bundle size or load times
 
-## Rule Categories by Priority
+## Reference Categories by Priority
 
 | Priority | Category | Impact | Prefix |
 |----------|----------|--------|--------|
@@ -131,14 +131,14 @@ Reference these guidelines when:
 
 ## How to Use
 
-Read individual rule files for detailed explanations and code examples:
+Read individual reference files for detailed explanations and code examples:
 
 ```
-rules/async-parallel.md
-rules/bundle-barrel-imports.md
+references/async-parallel.md
+references/bundle-barrel-imports.md
 ```
 
-Each rule file contains:
+Each reference file contains:
 - Brief explanation of why it matters
 - Incorrect code example with explanation
 - Correct code example with explanation
@@ -146,4 +146,4 @@ Each rule file contains:
 
 ## Full Compiled Document
 
-For the complete guide with all rules expanded: `AGENTS.md`
+For the complete guide with all references expanded: `AGENTS.md`

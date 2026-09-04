@@ -14,9 +14,9 @@ Create the smallest coherent commits that remain honest, reviewable, and usable.
 
 Use this skill to inspect and group changes, stage a precise group, select a Conventional Commit message, create authorized local commits, and verify the resulting history.
 
-## Rule Categories by Priority
+## Reference Categories by Priority
 
-| Priority | Responsibility | Rule |
+| Priority | Responsibility | Reference |
 | --- | --- | --- |
 | 1 | Authorization and remote boundaries | `authorization-scope` |
 | 2 | Working-tree and secret inspection | `inspect-safety` |
@@ -28,14 +28,14 @@ Use this skill to inspect and group changes, stage a precise group, select a Con
 
 ## How to Use
 
-Always read [`rules/authorization-scope.md`](rules/authorization-scope.md). Then read only the other rule files needed for the current request:
+Always read [`references/authorization-scope.md`](references/authorization-scope.md). Then read only the other reference files needed for the current request:
 
 - Planning only: `inspect-safety`, `group-atomic`, `message-format`, and `type-selection`.
-- Creating commits: all rules.
+- Creating commits: all references.
 - Reviewing proposed messages: `message-format` and `type-selection`.
 - Diagnosing staging or hook problems: `stage-preserve` and `verify-report`.
 
-Apply priorities in order when rules interact. Never treat this skill as authorization for an action the user did not request.
+Apply priorities in order when references interact. Never treat this skill as authorization for an action the user did not request.
 
 ## Full Compiled Document
 
