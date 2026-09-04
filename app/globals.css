@@ -22,8 +22,25 @@
 @theme inline {
   --color-background: var(--paper);
   --color-foreground: var(--ink);
+  --color-canvas: #f4f3ee;
+  --color-surface: #fffefa;
+  --color-ink: #191b17;
+  --color-muted: #656960;
+  --color-line: #d9dbd2;
+  --color-accent: #d9ff5a;
+  --color-accent-strong: #b6e32d;
+  --color-violet: #7767ed;
+  --color-coral: #ff775c;
+  --color-aqua: #78dbcf;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: Georgia, "Times New Roman", serif;
+  --shadow-card: 0 20px 55px rgb(25 27 23 / 0.1);
+}
+
+@utility content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 24rem;
 }
 
 * {
