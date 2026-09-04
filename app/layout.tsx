@@ -40,7 +40,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
-        <a className="skip-link" href="#contenido">Saltar al contenido</a>
+        <a className="fixed top-4 left-4 z-50 -translate-y-24 rounded-full bg-ink px-5 py-3 font-semibold text-surface transition-transform focus:translate-y-0" href="#contenido">
+          Saltar al contenido
+        </a>
         {children}
       </body>
     </html>
