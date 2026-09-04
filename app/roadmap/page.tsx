@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Roadmap",
@@ -76,16 +74,6 @@ const roadmap = [
 export default function RoadmapPage() {
   return (
     <main className="min-h-screen bg-canvas text-ink" id="contenido">
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-8 lg:px-12">
-        <Link className="inline-flex items-center gap-3 font-display text-2xl font-normal tracking-tight" href="/">
-          <Image alt="" className="size-9 rounded-xl object-cover" height={36} src="/icon-skillstack.png" width={36} />
-          skillstack<span className="text-violet">.</span>
-        </Link>
-        <Link className="text-sm font-semibold text-muted transition-colors hover:text-ink" href="/">
-          Volver al catálogo
-        </Link>
-      </header>
-
       <section className="mx-auto max-w-5xl px-6 pb-24 pt-14 sm:px-8 sm:pt-20 lg:px-12">
         <p className="font-mono text-xs font-bold tracking-widest text-violet uppercase">Roadmap</p>
         <h1 className="mt-5 max-w-3xl font-display text-5xl leading-none font-normal tracking-tight sm:text-7xl">

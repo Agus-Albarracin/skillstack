@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -72,7 +74,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a className="fixed top-4 left-4 z-50 -translate-y-24 rounded-full bg-ink px-5 py-3 font-semibold text-surface transition-transform focus:translate-y-0" href="#contenido">
           Saltar al contenido
         </a>
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

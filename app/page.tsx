@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
+import { ArrowRightIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { SkillExplorer } from "@/components/skill-explorer";
 import { skills } from "@/lib/skills";
@@ -13,31 +13,10 @@ const workflow = [
 
 const technologies = ["React", "Next.js", "Tailwind", "PostgreSQL", "Docker", "Playwright"] as const;
 
-function Brand() {
-  return (
-    <span className="inline-flex items-center gap-3 text-lg font-bold tracking-tighter">
-      <Image alt="" className="size-9 rounded-xl object-cover" height={36} src="/icon-skillstack.png" width={36} />
-      skillstack<span className="-ml-3 text-violet">.</span>
-    </span>
-  );
-}
-
 export default function Home() {
   return (
     <main className="overflow-hidden bg-canvas text-ink" id="contenido">
       <JsonLd />
-      <header className="relative z-20 mx-auto flex min-h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
-        <a href="#inicio" aria-label="Skillstack, volver al inicio"><Brand /></a>
-        <nav className="flex items-center gap-8 text-sm font-semibold" aria-label="Navegación principal">
-          <a className="hidden text-muted transition-colors hover:text-ink sm:block" href="#catalogo">Catálogo</a>
-          <a className="hidden text-muted transition-colors hover:text-ink md:block" href="#metodo">Método</a>
-          <a className="hidden text-muted transition-colors hover:text-ink lg:block" href="/roadmap">Roadmap</a>
-          <a className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-5 text-surface" href="#catalogo">
-            Explorar <ArrowRightIcon />
-          </a>
-        </nav>
-      </header>
-
       <section className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-2 lg:px-12 lg:py-24" id="inicio">
         <div className="relative z-10">
           <p className="inline-flex items-center gap-3 rounded-full border border-line bg-surface px-4 py-2 text-xs font-bold tracking-wider text-muted uppercase">
@@ -121,15 +100,6 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-accent px-6 py-10 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-7xl items-center gap-6 text-center md:grid-cols-3 md:text-left">
-          <a className="mx-auto md:mx-0" href="#inicio"><Brand /></a>
-          <p className="text-sm font-semibold">Un mapa abierto para construir mejor software.</p>
-          <a className="mx-auto inline-flex min-h-11 items-center gap-2 text-sm font-bold md:mx-0 md:justify-self-end" href="https://github.com/Agus-Albarracin/skillstack" target="_blank" rel="noreferrer">
-            Ver en GitHub <ArrowUpRightIcon />
-          </a>
-        </div>
-      </footer>
     </main>
   );
 }
