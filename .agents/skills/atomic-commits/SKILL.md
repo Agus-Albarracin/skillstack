@@ -2,7 +2,7 @@
 name: atomic-commits
 description: Plan and create small, reviewable Git commits when the user asks to commit current changes, split a working tree into coherent commits, or prepare an atomic Conventional Commit history. Excludes pushing, pull requests, merging, rebasing, tagging, and amending unless separately requested.
 metadata:
-  author: gaac
+  author: skillstack
   version: "1.0.0"
 ---
 

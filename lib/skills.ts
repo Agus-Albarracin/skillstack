@@ -179,7 +179,7 @@ export const skills: Skill[] = [
     description:
       "Cambios coherentes, staging preciso y Conventional Commits para crear un historial local pequeño y revisable.",
     source:
-      "https://github.com/Agus-Albarracin/GSFS/tree/main/.agents/skills/atomic-commits",
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/atomic-commits",
   },
   {
     name: "otel-instrumentation",

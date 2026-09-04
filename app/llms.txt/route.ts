@@ -16,7 +16,7 @@ export function GET() {
     ...entries,
     "",
     `## Código fuente`,
-    `- [Repositorio GSFS](${siteConfig.repository})`,
+    `- [Repositorio Skillstack](${siteConfig.repository})`,
   ].join("\n");
 
   return new Response(body, {

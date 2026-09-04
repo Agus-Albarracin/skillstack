@@ -1,4 +1,4 @@
-const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://gsfs.vercel.app";
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://skillstack.vercel.app";
 
 export const siteConfig = {
   name: "Skillstack",
@@ -9,8 +9,8 @@ export const siteConfig = {
   locale: "es_AR",
   language: "es",
   author: {
-    name: "gaac",
+    name: "skillstack",
     url: "https://github.com/Agus-Albarracin",
   },
-  repository: "https://github.com/Agus-Albarracin/GSFS",
+  repository: "https://github.com/Agus-Albarracin/skillstack",
 } as const;

@@ -123,7 +123,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-6 text-center md:grid-cols-3 md:text-left">
           <a className="mx-auto md:mx-0" href="#inicio"><Brand /></a>
           <p className="text-sm font-semibold">Un mapa abierto para construir mejor software.</p>
-          <a className="mx-auto inline-flex min-h-11 items-center gap-2 text-sm font-bold md:mx-0 md:justify-self-end" href="https://github.com/Agus-Albarracin/GSFS" target="_blank" rel="noreferrer">
+          <a className="mx-auto inline-flex min-h-11 items-center gap-2 text-sm font-bold md:mx-0 md:justify-self-end" href="https://github.com/Agus-Albarracin/skillstack" target="_blank" rel="noreferrer">
             Ver en GitHub <ArrowUpRightIcon />
           </a>
         </div>
