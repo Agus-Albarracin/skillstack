@@ -1,4 +1,4 @@
-# GSFS — Agent Skills Index
+# skillstack — Agent Skills Index
 
 When working on this project, load every relevant skill before making changes.
 
