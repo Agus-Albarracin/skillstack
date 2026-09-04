@@ -217,6 +217,14 @@ export const skills: Skill[] = [
       "https://github.com/mblode/agent-skills/tree/main/skills/optimise-seo",
   },
   {
+    name: "nextjs-specialist",
+    category: "Arquitectura",
+    area: "Ruteo y arquitectura",
+    description:
+      "App Router, Server Components, Server Actions, caché, Route Handlers y despliegues OpenNext en Next.js 16.",
+    source: "https://github.com/BrewHubPHL/nextjs-specialist",
+  },
+  {
     name: "build-reliable-messaging",
     category: "Arquitectura",
     area: "Mensajería confiable",
