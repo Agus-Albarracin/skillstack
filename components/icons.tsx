@@ -22,12 +22,3 @@ export function SearchIcon() {
     </svg>
   );
 }
-
-export function SparkIcon() {
-  return (
-    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="m12 1.8 1.75 6.45L20.2 10l-6.45 1.75L12 18.2l-1.75-6.45L3.8 10l6.45-1.75L12 1.8Z" />
-      <path d="m19 15.5.82 2.68 2.68.82-2.68.82L19 22.5l-.82-2.68L15.5 19l2.68-.82L19 15.5Z" />
-    </svg>
-  );
-}

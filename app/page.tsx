@@ -1,4 +1,5 @@
-import { ArrowRightIcon, ArrowUpRightIcon, SparkIcon } from "@/components/icons";
+import Image from "next/image";
+import { ArrowRightIcon, ArrowUpRightIcon } from "@/components/icons";
 import { JsonLd } from "@/components/json-ld";
 import { SkillExplorer } from "@/components/skill-explorer";
 import { skills } from "@/lib/skills";
@@ -15,7 +16,7 @@ const technologies = ["React", "Next.js", "Tailwind", "PostgreSQL", "Docker", "P
 function Brand() {
   return (
     <span className="inline-flex items-center gap-3 text-lg font-bold tracking-tighter">
-      <span className="grid size-9 place-items-center rounded-xl bg-ink text-accent"><SparkIcon /></span>
+      <Image alt="" className="size-9 rounded-xl object-cover" height={36} src="/icon-skillstack.png" width={36} />
       skillstack<span className="-ml-3 text-violet">.</span>
     </span>
   );
@@ -77,7 +78,7 @@ export default function Home() {
           </div>
           <div className="absolute top-1/2 left-1/2 flex aspect-3/4 w-64 -translate-x-1/2 -translate-y-1/2 rotate-1 flex-col rounded-3xl border border-ink/10 bg-accent p-7 shadow-card sm:w-72">
             <span className="font-mono text-xs font-bold tracking-widest">LEARN</span>
-            <span className="mx-auto mt-10 grid size-16 place-items-center rounded-full bg-ink text-accent"><SparkIcon /></span>
+            <Image alt="" className="mx-auto mt-10 size-16 rounded-3xl object-cover" height={64} src="/icon-skillstack.png" width={64} />
             <strong className="mt-auto font-display text-4xl leading-none font-normal">Master<br />every layer.</strong>
             <small className="mt-5 font-mono text-xs uppercase">{skills.length} skills · v1.0</small>
           </div>
