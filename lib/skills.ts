@@ -231,7 +231,8 @@ export const skills: Skill[] = [
     area: "Ruteo y arquitectura",
     description:
       "App Router, Server Components, Server Actions, caché, Route Handlers y despliegues OpenNext en Next.js 16.",
-    source: "https://github.com/BrewHubPHL/nextjs-specialist",
+    source:
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/nextjs-specialist",
   },
   {
     name: "build-reliable-messaging",
