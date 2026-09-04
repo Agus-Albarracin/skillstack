@@ -1,69 +1,125 @@
-import Image from "next/image";
+import { SkillExplorer } from "@/components/skill-explorer";
+import { skills } from "@/lib/skills";
+
+function SparkIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2l1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7L12 2Z" />
+      <path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" />
+    </svg>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M4 10h12M11 5l5 5-5 5" />
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main id="contenido">
+      <header className="site-header">
+        <a className="brand" href="#top" aria-label="Skillstack, volver al inicio">
+          <span className="brand-mark"><SparkIcon /></span>
+          <span>skillstack<span className="brand-dot">.</span></span>
+        </a>
+        <nav aria-label="Navegación principal">
+          <a href="#catalogo">Explorar skills</a>
+          <a href="#metodo">Cómo usarlo</a>
+          <a className="nav-cta" href="#catalogo">
+            Ver catálogo <ArrowIcon />
+          </a>
+        </nav>
+      </header>
+
+      <section className="hero" id="top">
+        <div className="hero-orbit orbit-one" aria-hidden="true" />
+        <div className="hero-orbit orbit-two" aria-hidden="true" />
+        <div className="hero-copy">
+          <div className="eyebrow">
+            <span className="eyebrow-dot" />
+            Curado para equipos modernos
+          </div>
+          <h1>
+            Tu stack completo.
+            <span>Skill por skill.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p>
+            Una colección curada de skills para diseñar, construir, probar y
+            desplegar aplicaciones full stack con mejores decisiones desde el
+            primer commit.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#catalogo">
+              Explorar las {skills.length} skills <ArrowIcon />
+            </a>
+            <a className="button button-secondary" href="#metodo">
+              Conocer el método
+            </a>
+          </div>
+          <dl className="hero-stats" aria-label="Resumen del catálogo">
+            <div><dt>{skills.length}</dt><dd>skills curadas</dd></div>
+            <div><dt>6</dt><dd>áreas clave</dd></div>
+            <div><dt>100%</dt><dd>open source</dd></div>
+          </dl>
+        </div>
+
+        <div className="hero-visual" aria-hidden="true">
+          <div className="stack-card card-back">
+            <span>SHIP</span><strong>Deploy<br />confidently.</strong>
+          </div>
+          <div className="stack-card card-middle">
+            <span>BUILD</span><strong>Compose<br />the stack.</strong>
+          </div>
+          <div className="stack-card card-front">
+            <div className="card-symbol"><SparkIcon /></div>
+            <span>LEARN</span><strong>Master<br />every layer.</strong>
+            <small>21 curated skills · v1.0</small>
+          </div>
+        </div>
+      </section>
+
+      <section className="trust-strip" aria-label="Tecnologías incluidas">
+        <span>REACT</span><i />
+        <span>NEXT.JS</span><i />
+        <span>TAILWIND</span><i />
+        <span>POSTGRESQL</span><i />
+        <span>DOCKER</span><i />
+        <span>PLAYWRIGHT</span>
+      </section>
+
+      <SkillExplorer />
+
+      <section className="method" id="metodo" aria-labelledby="method-title">
+        <div className="section-kicker">Un sistema, no una lista</div>
+        <div className="method-heading">
+          <h2 id="method-title">De la idea a producción,<br />sin puntos ciegos.</h2>
+          <p>
+            Elegí las skills que acompañan cada etapa de tu proyecto. Cada una
+            suma contexto especializado sin perder de vista el producto completo.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <ol className="method-grid">
+          <li><span>01</span><h3>Diseñá</h3><p>Define interfaces, contratos y datos antes de construir.</p></li>
+          <li><span>02</span><h3>Construí</h3><p>Implementa cada capa con patrones probados y mantenibles.</p></li>
+          <li><span>03</span><h3>Verificá</h3><p>Automatiza calidad, seguridad y accesibilidad desde el inicio.</p></li>
+          <li><span>04</span><h3>Desplegá</h3><p>Observa, opera y evoluciona tu producto con confianza.</p></li>
+        </ol>
+      </section>
+
+      <footer>
+        <a className="brand footer-brand" href="#top">
+          <span className="brand-mark"><SparkIcon /></span>
+          <span>skillstack<span className="brand-dot">.</span></span>
+        </a>
+        <p>Un mapa abierto para construir mejor software.</p>
+        <a href="https://github.com/Agus-Albarracin/GSFS" target="_blank" rel="noreferrer">
+          Ver en GitHub <ArrowIcon />
+        </a>
+      </footer>
+    </main>
   );
 }
