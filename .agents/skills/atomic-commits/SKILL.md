@@ -36,7 +36,3 @@ Always read [`references/authorization-scope.md`](references/authorization-scope
 - Diagnosing staging or hook problems: `stage-preserve` and `verify-report`.
 
 Apply priorities in order when references interact. Never treat this skill as authorization for an action the user did not request.
-
-## Full Compiled Document
-
-For the complete guide with every rule expanded, read [`AGENTS.md`](AGENTS.md).
