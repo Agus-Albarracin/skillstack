@@ -1,17 +1,11 @@
 {
   "schemaVersion": 1,
   "name": "frontend-ui-engineering",
-  "version": "1.0.0",
-  "status": "migrating",
+  "version": "2.0.0",
+  "status": "native",
   "maintainer": "skillstack",
   "createdAt": "2026-09-04",
   "updatedAt": "2026-09-04",
-  "abstract": "Guidance for building accessible, responsive, production-quality user interfaces.",
-  "sources": [
-    {
-      "repository": "https://github.com/addyosmani/agent-skills",
-      "revision": "1c760d643497e9da289300e5eb2f5aca861503f7",
-      "reviewedAt": "2026-09-04"
-    }
-  ]
+  "abstract": "Native Skillstack guidance for deliberate, accessible, responsive, production-quality frontend UI engineering.",
+  "sources": []
 }
