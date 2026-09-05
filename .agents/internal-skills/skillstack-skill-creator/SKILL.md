@@ -15,6 +15,10 @@ maintenance infrastructure or company governance.
   before writing its `SKILL.md`.
 - MUST keep shared instructions and operational decisions in `SKILL.md`; load
   conditional detail from `references/`.
+- MUST use the Skillstack `SKILL.md` pattern: a title, an activation boundary,
+  an operating contract, a reference catalogue, a quick reference when the
+  skill contains multiple rules, a workflow, and verification. Omit a section
+  only when it is genuinely inapplicable.
 - MUST keep public packages operational: distribute only `SKILL.md`, and include
   `references/`, `scripts/`, or `assets/` only when they are needed at runtime.
 - MUST keep `metadata.json` and `evals/` inside Skillstack. They are maintenance

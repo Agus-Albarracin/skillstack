@@ -15,3 +15,31 @@ a specific situation in a focused file under `references/`.
 
 Do not create empty optional directories. Every reference must be linked from
 `SKILL.md`, use a relative path, and be one level deep from the entrypoint.
+
+## SKILL.md Pattern
+
+Use this predictable entrypoint structure. Keep headings in English and adapt
+the body to the skill's domain.
+
+```md
+# {Skill Title}
+
+## When to Apply
+
+## Operating Contract
+
+## Reference Categories by Priority
+
+## Quick Reference
+
+## Workflow
+
+## Verification
+```
+
+`When to Apply`, `Operating Contract`, `Workflow`, and `Verification` are the
+default shared contract. `Reference Categories by Priority` and `Quick
+Reference` are required when a skill routes multiple rules or reference groups;
+they may be omitted for a small workflow with no such catalogue. Add sections
+such as `Compatibility`, `Examples`, `Gotchas`, or `Available Scripts` only
+when the resource or constraint exists.
