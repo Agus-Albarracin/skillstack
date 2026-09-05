@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "name": "skillstack-skill-creator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "native",
   "visibility": "internal",
   "maintainer": "skillstack",

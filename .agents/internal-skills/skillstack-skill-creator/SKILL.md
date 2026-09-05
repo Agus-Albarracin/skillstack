@@ -21,6 +21,9 @@ maintenance infrastructure or company governance.
   artifacts, never public vendorized payload.
 - MUST adapt external material into Skillstack's own guidance. Do not copy a
   source manual wholesale.
+- MUST remove a vendorized source once its guidance has been fully replaced by
+  a native Skillstack skill. A former repository may inform Git history, but it
+  is not an active `sources` entry.
 - MUST add a validation strategy for every `CRITICAL` rule when it can be checked
   mechanically.
 - MUST preserve user-owned work and use `atomic-commits` after a coherent change.

@@ -24,11 +24,11 @@
     {
       "id": "external-migration",
       "prompt": "Adapta una skill externa de seguridad para que sea nativa de Skillstack.",
-      "expected_output": "A migrating skill plan that identifies immutable sources, extracts reusable decisions, and avoids copying the source manual.",
+      "expected_output": "A native-skill plan that replaces external operating guidance with Skillstack guidance and removes obsolete sources.",
       "assertions": [
-        "The source uses an immutable revision rather than a moving branch.",
+        "The source is retained only while the skill remains migrating.",
         "The resulting guidance is adapted to Skillstack's operating model.",
-        "The plan identifies the conditions required to declare the skill native."
+        "The plan sets sources to an empty array when the skill becomes native."
       ]
     },
     {
