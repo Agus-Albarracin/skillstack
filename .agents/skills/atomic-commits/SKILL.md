@@ -12,6 +12,12 @@ Create the smallest coherent commits that remain honest, reviewable, and usable.
 
 Use this skill to inspect and group changes, stage a precise group, select a Conventional Commit message, create authorized local commits, and verify the resulting history.
 
+## Operating Contract
+
+- Preserve user-owned work and stage only assigned paths.
+- Treat planning, local commits, and remote operations as separate authorization boundaries.
+- Print the exact commit proposal in the console before creating every commit.
+
 ## Reference Router
 
 `priority` measures the impact of ignoring a guide. `dependsOn` identifies the
@@ -27,7 +33,15 @@ guides that must be resolved first; it never derives order from impact.
 | [`stage-preserve`](references/stage-preserve.md) | `HIGH` | `group-atomic`, `message-format` | Staging a group without absorbing unrelated work. |
 | [`verify-report`](references/verify-report.md) | `MEDIUM` | `stage-preserve` | Verifying the commit and reporting its evidence. |
 
-## How to Use
+## Quick Reference
+
+| Priority | Category | Use for |
+| --- | --- | --- |
+| `CRITICAL` | Authorization and inspection | Scope, ownership, secrets, and existing Git state. |
+| `HIGH` | Grouping, type, message, and staging | A coherent, reviewable commit. |
+| `MEDIUM` | Verification | Evidence after the commit. |
+
+## Workflow
 
 Always read [`references/authorization-scope.md`](references/authorization-scope.md). Then resolve `dependsOn` and read only the guides needed for the current request:
 
@@ -37,3 +51,9 @@ Always read [`references/authorization-scope.md`](references/authorization-scope
 - Diagnosing staging or hook problems: `stage-preserve` and `verify-report`.
 
 Never use `priority` to choose the reading order. Never treat this skill as authorization for an action the user did not request.
+
+## Verification
+
+- Inspect the staged diff before committing.
+- Confirm the resulting subject, changed paths, and working-tree status.
+- Report checks, remaining changes, and deliberately unperformed remote operations.
