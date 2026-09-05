@@ -37,16 +37,6 @@ export const skills: Skill[] = [
     featured: true,
   },
   {
-    name: "vercel-react-best-practices",
-    category: "Frontend",
-    area: "React / Next.js",
-    description:
-      "Performance, Server Components, data fetching, bundles y refactors para React y Next.js.",
-    source:
-      "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
-    featured: true,
-  },
-  {
     name: "tailwind-best-practices",
     category: "Frontend",
     area: "Tailwind CSS",
