@@ -28,7 +28,7 @@ defines the business contract for Skillstack skills; it is never vendorized.
 | --- | --- | --- |
 | `frontend-ui-engineering` | Building or modifying user-facing interfaces, pages, components, responsive layouts, accessibility, interaction states, or UI quality. | `.agents/skills/frontend-ui-engineering/SKILL.md` |
 | `nextjs-specialist` | Next.js 16 App Router routes, layouts, React Server/Client Component boundaries, Server Actions, Cache Components, Route Handlers, or OpenNext/Cloudflare Workers deployment. | `.agents/skills/nextjs-specialist/SKILL.md` |
-| `vercel-react-performance-engineering` | Evidence-driven React and Next.js performance work across latency, delivery, server execution, browser resources, rendering, and JavaScript hot paths. | `.agents/skills/vercel-react-performance-engineering/SKILL.md` |
+| `vercel-react-best-practices` | React and Next.js performance guidance for data fetching, bundles, server execution, rendering, and JavaScript hot paths. | `.agents/skills/vercel-react-best-practices/SKILL.md` |
 | `tailwind-best-practices` | Writing, reviewing, or refactoring Tailwind classes, design tokens, responsive layouts, or UI styling. | `.agents/skills/tailwind-best-practices/SKILL.md` |
 | `optimise-seo` | Metadata, canonical URLs, sitemaps, robots rules, JSON-LD, redirects, indexing, social previews, security headers, or Core Web Vitals. | `.agents/skills/optimise-seo/SKILL.md` |
 | `atomic-commits` | Planning, staging, creating, reviewing, or verifying local commits. | `.agents/skills/atomic-commits/SKILL.md` |
