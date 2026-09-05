@@ -26,6 +26,7 @@ defines the business contract for Skillstack skills; it is never vendorized.
 
 | Skill | Trigger | Path |
 | --- | --- | --- |
+| `frontend-design` | Establishing or reshaping visual direction, typography, color, composition, content voice, or a distinctive interface identity. | `.agents/skills/frontend-design/SKILL.md` |
 | `frontend-ui-engineering` | Building or modifying user-facing interfaces, pages, components, responsive layouts, accessibility, interaction states, or UI quality. | `.agents/skills/frontend-ui-engineering/SKILL.md` |
 | `nextjs-specialist` | Next.js 16 App Router routes, layouts, React Server/Client Component boundaries, Server Actions, Cache Components, Route Handlers, or OpenNext/Cloudflare Workers deployment. | `.agents/skills/nextjs-specialist/SKILL.md` |
 | `vercel-react-best-practices` | React and Next.js performance guidance for data fetching, bundles, server execution, rendering, and JavaScript hot paths. | `.agents/skills/vercel-react-best-practices/SKILL.md` |
@@ -33,6 +34,9 @@ defines the business contract for Skillstack skills; it is never vendorized.
 | `optimise-seo` | Metadata, canonical URLs, sitemaps, robots rules, JSON-LD, redirects, indexing, social previews, security headers, or Core Web Vitals. | `.agents/skills/optimise-seo/SKILL.md` |
 | `atomic-commits` | Planning, staging, creating, reviewing, or verifying local commits. | `.agents/skills/atomic-commits/SKILL.md` |
 | `skillstack-skill-creator` | Creating, migrating, validating, or changing a Skillstack skill or its distribution boundary. Internal only. | `.agents/internal-skills/skillstack-skill-creator/SKILL.md` |
+
+When both frontend skills apply, use `frontend-design` to establish the visual
+direction before implementing and validating it with `frontend-ui-engineering`.
 
 ## Project Checks
 

@@ -27,6 +27,16 @@ export const categories: Array<"Todas" | SkillCategory> = [
 
 export const skills: Skill[] = [
   {
+    name: "frontend-design",
+    category: "Frontend",
+    area: "Dirección visual",
+    description:
+      "Dirección visual intencional para tipografía, color, composición y contenido sin recurrir a plantillas genéricas.",
+    source:
+      "https://github.com/anthropics/skills/tree/41bbe19d1a1a7eaab5e7bb9050a417e5c6cffc8f/skills/frontend-design",
+    featured: true,
+  },
+  {
     name: "vercel-react-best-practices",
     category: "Frontend",
     area: "React / Next.js",
