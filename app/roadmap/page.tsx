@@ -43,7 +43,7 @@ const roadmap = [
     description:
       "Recrear de forma progresiva las skills de la guía como skills nativas: misma cobertura útil, voz de Skillstack y convenciones verificables.",
     status: "En progreso",
-    tone: "bg-violet",
+    tone: "bg-accent-strong",
   },
   {
     phase: "Después",
@@ -51,7 +51,7 @@ const roadmap = [
     description:
       "Indicar versión, framework, runtime y dependencias para elegir skills compatibles con cada proyecto antes de instalarlas.",
     status: "Exploración",
-    tone: "bg-accent-strong",
+    tone: "bg-gold",
   },
   {
     phase: "Después",
@@ -74,26 +74,31 @@ const roadmap = [
 export default function RoadmapPage() {
   return (
     <main className="min-h-screen bg-canvas text-ink" id="contenido">
-      <section className="mx-auto max-w-5xl px-6 pb-24 pt-14 sm:px-8 sm:pt-20 lg:px-12">
-        <p className="font-mono text-xs font-bold tracking-widest text-violet uppercase">Roadmap</p>
-        <h1 className="mt-5 max-w-3xl font-display text-5xl leading-none font-normal tracking-tight sm:text-7xl">
+      <section className="mx-auto max-w-6xl px-6 pt-14 pb-24 sm:px-8 sm:pt-20 lg:px-12">
+        <p className="text-sm font-medium text-accent">Roadmap</p>
+        <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.02] font-normal tracking-tight sm:text-7xl">
           Construimos la guía que queremos usar.
         </h1>
         <p className="mt-7 max-w-2xl text-lg leading-8 text-muted">
           Una línea de tiempo viva para las mejoras que harán de Skillstack un catálogo más útil, claro y propio.
         </p>
 
-        <ol className="relative mt-16 border-l border-line pl-8 sm:ml-3 sm:pl-12">
+        <ol className="relative mt-16 border-l border-line pl-7 sm:ml-3 sm:pl-12">
           {roadmap.map((item) => (
             <li className="relative pb-12 last:pb-0" key={item.title}>
-              <span className={`absolute -left-10 top-1 size-4 rounded-full border-4 border-canvas ${item.tone}`} />
-              <div className="rounded-3xl border border-line bg-surface p-6 shadow-card sm:p-8">
+              <span className={`absolute -left-[2.15rem] top-1 size-3 rounded-full ring-4 ring-canvas sm:-left-[3.35rem] ${item.tone}`} />
+              <div className="border-t border-line py-7 sm:grid sm:grid-cols-[10rem_1fr] sm:gap-8 sm:py-9">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <p className="font-mono text-xs font-bold tracking-widest text-muted uppercase">{item.phase}</p>
-                  <span className="rounded-full bg-canvas px-3 py-1 text-xs font-bold text-ink">{item.status}</span>
+                  <p className="text-sm text-muted">{item.phase}</p>
+                  <span className="text-xs text-accent sm:hidden">{item.status}</span>
                 </div>
-                <h2 className="mt-7 text-2xl font-semibold tracking-tight">{item.title}</h2>
-                <p className="mt-3 max-w-2xl leading-7 text-muted">{item.description}</p>
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <h2 className="text-2xl font-semibold tracking-tight">{item.title}</h2>
+                    <span className="hidden text-xs text-accent sm:block">{item.status}</span>
+                  </div>
+                  <p className="mt-3 max-w-2xl leading-7 text-muted">{item.description}</p>
+                </div>
               </div>
             </li>
           ))}

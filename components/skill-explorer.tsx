@@ -4,18 +4,24 @@ import { useMemo, useState } from "react";
 import { ArrowUpRightIcon, SearchIcon } from "@/components/icons";
 import { categories, skills, type SkillCategory } from "@/lib/skills";
 
-const categoryStyles: Record<SkillCategory, { badge: string; code: string }> = {
-  Frontend: { badge: "bg-accent", code: "FE" },
-  Backend: { badge: "bg-aqua", code: "BE" },
-  Datos: { badge: "bg-amber-200", code: "DB" },
-  Infraestructura: { badge: "bg-indigo-200", code: "DX" },
-  Calidad: { badge: "bg-orange-200", code: "QA" },
-  Arquitectura: { badge: "bg-purple-200", code: "AR" },
+const categoryStyles: Record<SkillCategory, { marker: string; code: string }> = {
+  Frontend: { marker: "bg-accent", code: "FE" },
+  Backend: { marker: "bg-accent-strong", code: "BE" },
+  Datos: { marker: "bg-gold", code: "DB" },
+  Infraestructura: { marker: "bg-violet", code: "DX" },
+  Calidad: { marker: "bg-coral", code: "QA" },
+  Arquitectura: { marker: "bg-aqua", code: "AR" },
 };
+
+function getInstallCommand(source: string) {
+  return `npx skills add ${source} --copy`;
+}
 
 export function SkillExplorer() {
   const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>("Todas");
   const [query, setQuery] = useState("");
+  const [copiedSkill, setCopiedSkill] = useState<string | null>(null);
+  const [copyError, setCopyError] = useState(false);
 
   const visibleSkills = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase("es");
@@ -36,28 +42,39 @@ export function SkillExplorer() {
     setActiveCategory("Todas");
   }
 
+  async function copyCommand(name: string, source: string) {
+    try {
+      await navigator.clipboard.writeText(getInstallCommand(source));
+      setCopiedSkill(name);
+      setCopyError(false);
+    } catch {
+      setCopiedSkill(null);
+      setCopyError(true);
+    }
+  }
+
   return (
     <section className="bg-canvas px-6 py-20 sm:px-8 sm:py-28 lg:px-12" id="catalogo" aria-labelledby="catalog-title">
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 border-b border-line pb-10 lg:grid-cols-2 lg:items-end">
+        <div className="grid gap-8 border-b border-line pb-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
-            <p className="font-mono text-xs font-bold tracking-widest text-violet uppercase">Directorio de skills</p>
-            <h2 className="mt-4 max-w-2xl text-4xl leading-none font-semibold tracking-tighter text-ink sm:text-6xl">
-              La herramienta correcta para cada capa.
+            <p className="text-sm font-medium text-accent">Catálogo curado</p>
+            <h2 className="mt-5 max-w-3xl text-4xl leading-[1.02] font-semibold tracking-[-0.04em] text-ink sm:text-6xl" id="catalog-title">
+              Una guía precisa para cada capa del sistema.
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-muted lg:justify-self-end">
-            Explorá una selección open source para tomar mejores decisiones en frontend, backend, datos, infraestructura y calidad.
+            Las skills nativas expresan el criterio de Skillstack. Las vendorized conservan la voz, licencia y revisión de su autor.
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+        <div className="mt-8 grid gap-5 lg:grid-cols-[1fr_20rem] lg:items-center">
           <div className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-1 sm:mx-0 sm:px-0" aria-label="Filtrar por categoría">
             {categories.map((category) => (
               <button
                 className={activeCategory === category
-                  ? "min-h-11 shrink-0 cursor-pointer rounded-full bg-ink px-5 text-sm font-semibold text-surface"
-                  : "min-h-11 shrink-0 cursor-pointer rounded-full border border-line bg-surface px-5 text-sm font-semibold text-muted transition-colors hover:border-ink hover:text-ink"}
+                  ? "min-h-11 shrink-0 cursor-pointer rounded-md bg-ink px-4 text-sm font-medium text-surface"
+                  : "min-h-11 shrink-0 cursor-pointer rounded-md border border-line px-4 text-sm font-medium text-muted transition-colors duration-200 hover:border-ink hover:bg-surface hover:text-ink"}
                 key={category}
                 type="button"
                 aria-pressed={activeCategory === category}
@@ -68,7 +85,7 @@ export function SkillExplorer() {
             ))}
           </div>
 
-          <label className="flex min-h-12 w-full items-center gap-3 rounded-full border border-line bg-surface px-5 text-muted focus-within:border-violet focus-within:ring-4 focus-within:ring-violet/15 lg:max-w-xs">
+          <label className="flex min-h-12 w-full items-center gap-3 border-b border-line px-1 text-muted transition-colors focus-within:border-accent-strong focus-within:text-ink">
             <span className="sr-only">Buscar skills</span>
             <SearchIcon />
             <input
@@ -81,42 +98,50 @@ export function SkillExplorer() {
           </label>
         </div>
 
-        <p className="mt-8 font-mono text-xs tracking-wider text-muted uppercase" aria-live="polite">
-          {visibleSkills.length} {visibleSkills.length === 1 ? "resultado" : "resultados"}
-        </p>
+        <div className="mt-10 flex items-center justify-between gap-4 text-sm text-muted" aria-live="polite">
+          <p>{visibleSkills.length} {visibleSkills.length === 1 ? "resultado" : "resultados"}</p>
+          <p>{copyError ? "No pudimos copiar el comando. Abrí la fuente e intentalo otra vez." : copiedSkill ? `Comando de ${copiedSkill} copiado.` : ""}</p>
+        </div>
 
         {visibleSkills.length > 0 ? (
-          <div className="mt-4 grid overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
-            {visibleSkills.map((skill, index) => {
+          <div className="mt-5 border-t border-line">
+            {visibleSkills.map((skill) => {
               const style = categoryStyles[skill.category];
+              const isNative = skill.source.includes("Agus-Albarracin/skillstack");
 
               return (
-                <article className="content-auto -mb-px -mr-px flex min-h-96 flex-col border-r border-b border-line bg-surface p-7 transition-colors hover:bg-accent/15 sm:p-8" key={skill.name}>
-                  <div className="flex items-start justify-between">
-                    <span className={`grid size-12 place-items-center rounded-2xl font-mono text-xs font-bold text-ink ${style.badge}`}>
-                      {style.code}
-                    </span>
-                    <span className="font-mono text-xs text-muted">{String(index + 1).padStart(2, "0")}</span>
+                <article className="content-auto group grid gap-7 border-b border-line py-8 transition-colors duration-200 hover:bg-surface/65 sm:px-5 lg:grid-cols-[5rem_1fr_13rem] lg:items-center" key={skill.name}>
+                  <div className="flex items-center gap-3 lg:block">
+                    <span className={`block size-3 rounded-full ${style.marker}`} aria-hidden="true" />
+                    <span className="text-sm text-muted lg:mt-5 lg:block">{style.code}</span>
                   </div>
-                  <div className="mt-10">
-                    <p className="text-xs font-bold tracking-widest text-violet uppercase">{skill.area}</p>
-                    <h3 className="mt-3 overflow-hidden font-mono text-lg leading-6 font-semibold tracking-tight text-ink">{skill.name}</h3>
-                    <p className="mt-4 text-sm leading-6 text-muted">{skill.description}</p>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                      <span className="text-accent">{skill.area}</span>
+                      <span className="text-muted">{isNative ? "native" : "vendorized"}</span>
+                    </div>
+                    <h3 className="mt-3 break-words text-xl font-semibold tracking-tight text-ink">{skill.name}</h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">{skill.description}</p>
                   </div>
-                  <a className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-bold text-ink transition-colors hover:text-violet" href={skill.source} target="_blank" rel="noreferrer">
-                    Ver repositorio <ArrowUpRightIcon />
-                    <span className="sr-only"> de {skill.name}</span>
-                  </a>
+                  <div className="flex flex-wrap gap-4 lg:justify-end">
+                    <button className="min-h-11 cursor-pointer text-sm font-semibold text-ink underline decoration-line underline-offset-4 transition-colors duration-200 hover:decoration-ink" type="button" onClick={() => copyCommand(skill.name, skill.source)}>
+                      {copiedSkill === skill.name ? "Copiado" : "Copiar comando"}
+                    </button>
+                    <a className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-muted transition-colors duration-200 hover:text-ink" href={skill.source} target="_blank" rel="noreferrer">
+                      Abrir fuente <ArrowUpRightIcon />
+                      <span className="sr-only"> de {skill.name}</span>
+                    </a>
+                  </div>
                 </article>
               );
             })}
           </div>
         ) : (
-          <div className="mt-4 rounded-3xl border border-line bg-surface px-6 py-20 text-center sm:py-28">
-            <p className="text-xs font-bold tracking-widest text-coral uppercase">Sin coincidencias</p>
-            <h3 className="mt-4 text-3xl font-semibold tracking-tight text-ink">Probá con otra búsqueda.</h3>
+          <div className="mt-5 border-y border-line py-20 text-center sm:py-28">
+            <p className="text-sm text-coral">Sin coincidencias</p>
+            <h3 className="mt-4 font-display text-3xl text-ink">Probá con otra búsqueda.</h3>
             <p className="mt-3 text-muted">No encontramos una skill con esos criterios.</p>
-            <button className="mt-7 min-h-11 cursor-pointer rounded-full bg-ink px-6 text-sm font-bold text-surface" type="button" onClick={clearFilters}>
+            <button className="mt-7 min-h-11 cursor-pointer rounded-md bg-ink px-6 text-sm font-semibold text-surface transition-colors duration-200 hover:bg-accent-strong" type="button" onClick={clearFilters}>
               Limpiar filtros
             </button>
           </div>
