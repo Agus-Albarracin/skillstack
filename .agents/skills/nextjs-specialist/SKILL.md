@@ -52,7 +52,7 @@ Read only the reference that matches the task:
 
 ## Handoffs
 
-Use `vercel-react-best-practices` for React or Next.js performance work, `tailwind-best-practices` for Tailwind edits, and `optimise-seo` for metadata, indexing, structured data, or sitemaps. This skill owns their Next.js-specific integration.
+Use `vercel-react-performance-engineering` for React or Next.js performance work, `tailwind-best-practices` for Tailwind edits, and `optimise-seo` for metadata, indexing, structured data, or sitemaps. This skill owns their Next.js-specific integration.
 
 ## Verification
 
