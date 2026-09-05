@@ -1,17 +1,11 @@
 {
   "schemaVersion": 1,
   "name": "tailwind-best-practices",
-  "version": "1.0.0",
-  "status": "migrating",
+  "version": "2.0.0",
+  "status": "native",
   "maintainer": "skillstack",
   "createdAt": "2026-09-04",
   "updatedAt": "2026-09-04",
-  "abstract": "Guidance for maintainable Tailwind CSS usage, design tokens, and component styling.",
-  "sources": [
-    {
-      "repository": "https://github.com/evilmartians/agent-skills",
-      "revision": "a2a83b280a2c5b9a6176c5934298fad0224bbce4",
-      "reviewedAt": "2026-09-04"
-    }
-  ]
+  "abstract": "Native Skillstack guidance for maintainable Tailwind CSS, semantic tokens, and constrained component variants.",
+  "sources": []
 }
