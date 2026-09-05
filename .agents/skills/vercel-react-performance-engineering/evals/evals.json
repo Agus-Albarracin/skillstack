@@ -1,0 +1,55 @@
+{
+  "skill_name": "vercel-react-performance-engineering",
+  "evals": [
+    {
+      "id": "independent-server-waterfall",
+      "prompt": "Review a Next.js page where inventory, pricing, and recommendations are awaited sequentially even though they are independent.",
+      "expected_output": "Map the dependency graph, launch independent work together, preserve real dependencies, and request before-and-after server timing.",
+      "assertions": [
+        "Response Latency Graph is handled before lower-priority optimizations.",
+        "Independent work starts together without changing error semantics.",
+        "The result requires timing evidence from the same request path."
+      ]
+    },
+    {
+      "id": "server-action-authorization",
+      "prompt": "Optimize a Server Action that updates stock but currently relies on a protected page layout for authorization.",
+      "expected_output": "Reject performance work that preserves an authorization hole; authenticate, authorize, and validate inside the action before optimizing it.",
+      "assertions": [
+        "Direct remote invocation is treated as possible.",
+        "Authorization is checked inside the mutation.",
+        "Performance does not outrank correctness or tenant isolation."
+      ]
+    },
+    {
+      "id": "rare-heavy-client-capability",
+      "prompt": "A rarely opened forecasting editor contributes 420 KB to every initial route load.",
+      "expected_output": "Split the capability at an interaction boundary, provide an accessible loading state, and compare initial and post-interaction bundles.",
+      "assertions": [
+        "Delivery Budget is treated as CRITICAL.",
+        "The primary route does not ship the editor eagerly.",
+        "Verification covers both initial readiness and interaction latency."
+      ]
+    },
+    {
+      "id": "blanket-memoization-request",
+      "prompt": "Wrap every calculation and callback in useMemo or useCallback to make this component faster.",
+      "expected_output": "Reject blanket memoization, profile the component, remove unnecessary work, and memoize only expensive or identity-sensitive paths.",
+      "assertions": [
+        "Cheap primitive calculations remain direct.",
+        "Correct dependency semantics are preserved.",
+        "Profiler evidence is required before claiming improvement."
+      ]
+    },
+    {
+      "id": "shared-cache-without-policy",
+      "prompt": "Add a module-level Map that caches every customer's pricing response forever.",
+      "expected_output": "Reject the unbounded cross-request cache and require capacity, freshness, invalidation, tenant scope, and deployment topology decisions.",
+      "assertions": [
+        "Cross-request memory is recognized as process-wide shared state.",
+        "Tenant data cannot leak through an incomplete key.",
+        "A bounded cache or external store is selected only after its policy is explicit."
+      ]
+    }
+  ]
+}
