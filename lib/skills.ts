@@ -43,7 +43,7 @@ export const skills: Skill[] = [
     description:
       "Clases mantenibles, design tokens, variantes, configuración y refactors con Tailwind.",
     source:
-      "https://github.com/evilmartians/agent-skills/tree/main/skills/tailwind-best-practices",
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/tailwind-best-practices",
     featured: true,
   },
   {
@@ -53,7 +53,7 @@ export const skills: Skill[] = [
     description:
       "Interfaces responsive y accesibles con WCAG, teclado, foco, contraste y estados completos.",
     source:
-      "https://github.com/addyosmani/agent-skills/tree/main/skills/frontend-ui-engineering",
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/frontend-ui-engineering",
   },
   {
     name: "nestjs-best-practices",
@@ -223,7 +223,7 @@ export const skills: Skill[] = [
     description:
       "Sitemaps, robots, metadatos, canonicals, datos estructurados, indexación y Core Web Vitals en Next.js.",
     source:
-      "https://github.com/mblode/agent-skills/tree/main/skills/optimise-seo",
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/optimise-seo",
   },
   {
     name: "nextjs-specialist",
