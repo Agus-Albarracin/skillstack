@@ -7,7 +7,12 @@ description: Build, review, and refactor Next.js 16 App Router applications usin
 
 Build, review, and refactor production Next.js App Router applications. Start from the project's installed versions, deployment target, and conventions; do not introduce a second data layer, UI system, or hosting platform without a user request.
 
-## Non-negotiables
+## When to Apply
+
+- Building or reviewing Next.js App Router routes, layouts, mutations, caching, endpoints, or deployment.
+- Deciding Server/Client Component boundaries, rendering behavior, or Next.js-specific security and consistency concerns.
+
+## Operating Contract
 
 - The server is authoritative: authenticate, authorize, validate, and recompute sensitive values from server-side sources.
 - Prefer Server Components. Keep `'use client'` at the smallest interactive leaf and pass only serializable props across that boundary.
@@ -16,7 +21,7 @@ Build, review, and refactor production Next.js App Router applications. Start fr
 - Keep secrets and privileged data access behind `import 'server-only'`; fail closed when an auth, signature, or safety check is absent.
 - Inspect the relevant code path before changing it, verify both sides of each contract, and run the repository's required checks.
 
-## Read focused guidance
+## Reference Categories by Priority
 
 Read only the reference that matches the task:
 
@@ -29,6 +34,27 @@ Read only the reference that matches the task:
 - Failure modes and unsafe shortcuts: [anti-patterns](references/anti-patterns.md)
 - Terminology and official documentation: [glossary](references/glossary.md) and [official links](references/official-docs-links.md)
 
+## Quick Reference
+
+| Priority | Category | Use for |
+| --- | --- | --- |
+| `CRITICAL` | Server authority and boundaries | Authentication, authorization, serialization, and privileged data. |
+| `CRITICAL` | Caching and mutation safety | Personalized or consistency-sensitive application state. |
+| `HIGH` | App Router and Route Handlers | Routes, layouts, external contracts, and runtime behavior. |
+| `HIGH` | Deployment | OpenNext, Workers, and production-like verification. |
+
+## Workflow
+
+1. Inspect installed versions, target runtime, and the relevant route or component boundary.
+2. Read the focused guidance matching the task before changing code.
+3. Implement the smallest safe Next.js-specific change.
+4. Run repository checks and verify both sides of the affected contract.
+
 ## Handoffs
 
 Use `vercel-react-best-practices` for React or Next.js performance work, `tailwind-best-practices` for Tailwind edits, and `optimise-seo` for metadata, indexing, structured data, or sitemaps. This skill owns their Next.js-specific integration.
+
+## Verification
+
+- Server-only access, authorization, cache behavior, and serialization boundaries are explicit.
+- Relevant repository checks pass, or unavailable checks are reported plainly.
