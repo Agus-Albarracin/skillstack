@@ -1,0 +1,23 @@
+{
+  "skill_name": "react-performance-engineering",
+  "evals": [
+    {
+      "id": "server-waterfall",
+      "prompt": "Review a Next.js page where three independent server reads are awaited one after another.",
+      "expected_output": "Identify the waterfall first, preserve real dependencies, and verify concurrent timing after the change.",
+      "assertions": ["Async flow is prioritized as CRITICAL.", "Independent work starts together.", "The response asks for timing evidence."]
+    },
+    {
+      "id": "large-client-bundle",
+      "prompt": "A rarely opened chart editor adds 400 KB to the initial client bundle.",
+      "expected_output": "Load the editor by user intent while preserving accessible loading behavior.",
+      "assertions": ["Bundle delivery is addressed before micro-optimization.", "Initial and post-interaction bundles are verified."]
+    },
+    {
+      "id": "premature-memoization",
+      "prompt": "Add useMemo to every expression in this component to make it faster.",
+      "expected_output": "Reject blanket memoization, profile first, and optimize only expensive or identity-sensitive work.",
+      "assertions": ["Trivial primitive calculations remain direct.", "Profiler evidence is required."]
+    }
+  ]
+}

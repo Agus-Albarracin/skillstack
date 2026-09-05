@@ -27,6 +27,16 @@ export const categories: Array<"Todas" | SkillCategory> = [
 
 export const skills: Skill[] = [
   {
+    name: "react-performance-engineering",
+    category: "Frontend",
+    area: "React / Next.js",
+    description:
+      "Performance basada en evidencia para asincronía, bundles, servidor, renderizado e hidratación.",
+    source:
+      "https://github.com/Agus-Albarracin/skillstack/tree/main/.agents/skills/react-performance-engineering",
+    featured: true,
+  },
+  {
     name: "vercel-react-best-practices",
     category: "Frontend",
     area: "React / Next.js",
