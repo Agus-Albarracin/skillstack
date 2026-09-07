@@ -3,13 +3,13 @@
 import { ArrowUpRightIcon } from "@/components/icons";
 import type { Skill, SkillCategory } from "@/lib/skills";
 
-const categoryStyles: Record<SkillCategory, { marker: string; code: string }> = {
-  Frontend: { marker: "bg-accent text-accent", code: "FE" },
-  Backend: { marker: "bg-accent-strong text-accent-strong", code: "BE" },
-  Datos: { marker: "bg-gold text-gold", code: "DB" },
-  Infraestructura: { marker: "bg-violet text-violet", code: "DX" },
-  Calidad: { marker: "bg-coral text-coral", code: "QA" },
-  Arquitectura: { marker: "bg-aqua text-aqua", code: "AR" },
+const categoryStyles: Record<SkillCategory, { surface: string; code: string }> = {
+  Frontend: { surface: "skill-surface-frontend", code: "FE" },
+  Backend: { surface: "skill-surface-backend", code: "BE" },
+  Datos: { surface: "skill-surface-data", code: "DB" },
+  Infraestructura: { surface: "skill-surface-infrastructure", code: "DX" },
+  Calidad: { surface: "skill-surface-quality", code: "QA" },
+  Arquitectura: { surface: "skill-surface-architecture", code: "AR" },
 };
 
 type SkillListItemProps = {
@@ -25,19 +25,17 @@ export function getInstallCommand(source: string) {
 }
 
 export function SkillListItem({ copied, index, isLast, onCopy, skill }: SkillListItemProps) {
-  const { marker, code } = categoryStyles[skill.category];
+  const { surface, code } = categoryStyles[skill.category];
   const isNative = skill.source.includes("Agus-Albarracin/skillstack");
 
   return (
-    <li className="list-reveal skill-list-row relative isolate grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 border-b border-line px-2 py-2 lg:grid-cols-[3rem_minmax(10rem,0.8fr)_minmax(12rem,1.2fr)_11rem] lg:gap-4 lg:px-3" data-reveal-item>
+    <li className={`list-reveal skill-list-row ${surface} relative isolate grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 border-b border-line px-2 py-2 lg:grid-cols-[3rem_minmax(10rem,0.8fr)_minmax(12rem,1.2fr)_11rem] lg:gap-4 lg:px-3`} data-reveal-item>
       <span className="skill-card-plane" aria-hidden="true" />
       <span className="reveal-rule" aria-hidden="true" />
       {isLast ? <span className="list-end-light" aria-hidden="true" /> : null}
       <div className="flex items-center gap-1" data-reveal-part="index">
-        <span className="skill-orbit" aria-hidden="true">
-          <span className={`skill-orbit-core ${marker}`} />
-        </span>
-        <span className="hidden text-[0.625rem] text-muted lg:block">{String(index + 1).padStart(2, "0")} / {code}</span>
+        <span className="font-mono text-[0.625rem] text-muted">{String(index + 1).padStart(2, "0")}</span>
+        <span className="hidden font-mono text-[0.625rem] text-muted lg:inline">/ {code}</span>
       </div>
       <div className="min-w-0" data-reveal-part="content">
         <div className="flex min-w-0 items-center gap-2 text-[0.625rem] leading-none">
@@ -48,7 +46,6 @@ export function SkillListItem({ copied, index, isLast, onCopy, skill }: SkillLis
       </div>
       <div className="hidden min-w-0 lg:block" data-reveal-part="description">
         <p className="truncate text-xs leading-4 text-muted">{skill.description}</p>
-        <code className="mt-1 block truncate font-mono text-[0.625rem] text-muted">{getInstallCommand(skill.source)}</code>
       </div>
       <div className="flex items-center justify-end gap-2" data-reveal-part="actions">
         <button className="skill-card-button min-h-10 cursor-pointer rounded-full bg-ink px-3 text-[0.6875rem] font-semibold text-surface hover:bg-accent-strong" onClick={() => onCopy(skill)} type="button">{copied ? "Copiado" : "Copiar"}</button>
