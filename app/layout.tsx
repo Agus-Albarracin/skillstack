@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
   creator: siteConfig.author.name,
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/icon-skillstack.png", type: "image/png" }],
+    shortcut: ["/icon-skillstack.png"],
+    apple: [{ url: "/icon-skillstack.png", type: "image/png" }],
+  },
   manifest: "/manifest.webmanifest",
   robots: {
     index: true,
@@ -50,11 +55,20 @@ export const metadata: Metadata = {
     type: "website",
     siteName: siteConfig.name,
     locale: siteConfig.locale,
+    images: [
+      {
+        url: "/banner-skillstack.png",
+        width: 3780,
+        height: 1890,
+        alt: "Skillstack — skills versionadas para equipos JavaScript full stack",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Skills para tu stack JavaScript | Skillstack",
     description: siteConfig.description,
+    images: ["/banner-skillstack.png"],
   },
   verification: {
     ...(process.env.GOOGLE_SITE_VERIFICATION
