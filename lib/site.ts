@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Skillstack",
   shortName: "Skillstack",
   description:
-    "Guía curada de skills open source para diseñar, construir, probar y desplegar aplicaciones full stack.",
+    "Skills revisadas para construir aplicaciones JavaScript con React, Next.js, Node.js, Express, NestJS, MongoDB y PostgreSQL.",
   url: new URL(configuredUrl).origin,
   locale: "es_AR",
   language: "es",

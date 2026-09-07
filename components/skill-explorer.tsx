@@ -50,16 +50,16 @@ export function SkillExplorer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
-            <p className="text-xs font-medium text-accent">Catálogo curado</p>
+            <p className="text-xs font-medium text-accent">Stack JavaScript</p>
             <h2
               className="mt-4 max-w-3xl text-4xl leading-[1.02] font-semibold tracking-[-0.04em] text-ink sm:text-5xl"
               id="catalog-title"
             >
-              Conocimiento que entra en foco.
+              Skills para cada capa del sistema.
             </h2>
           </div>
           <p className="max-w-lg text-sm leading-6 text-muted lg:justify-self-end">
-            Una lista continua para recorrer el stack completo. Cada skill aparece por capas y conserva la información necesaria para usarla.
+            Explorá frontend, backend, datos, infraestructura, calidad y arquitectura. Elegí solo el contexto que necesita tu próxima tarea.
           </p>
         </div>
 

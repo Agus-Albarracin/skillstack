@@ -24,7 +24,7 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Skills para proyectos full stack | Skillstack",
+    default: "Skills para tu stack JavaScript | Skillstack",
     template: "%s | Skillstack",
   },
   description: siteConfig.description,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Skills para proyectos full stack | Skillstack",
+    title: "Skills para tu stack JavaScript | Skillstack",
     description: siteConfig.description,
     type: "website",
     siteName: siteConfig.name,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Skills para proyectos full stack | Skillstack",
+    title: "Skills para tu stack JavaScript | Skillstack",
     description: siteConfig.description,
   },
   verification: {
