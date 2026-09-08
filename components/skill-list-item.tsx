@@ -14,7 +14,6 @@ const categoryStyles: Record<SkillCategory, { surface: string; code: string }> =
 
 type SkillListItemProps = {
   copied: boolean;
-  index: number;
   isLast: boolean;
   onCopy: (skill: Skill) => void;
   skill: Skill;
@@ -24,18 +23,17 @@ export function getInstallCommand(source: string) {
   return `npx skills add ${source} --copy`;
 }
 
-export function SkillListItem({ copied, index, isLast, onCopy, skill }: SkillListItemProps) {
+export function SkillListItem({ copied, isLast, onCopy, skill }: SkillListItemProps) {
   const { surface, code } = categoryStyles[skill.category];
   const isNative = skill.source.includes("Agus-Albarracin/skillstack");
 
   return (
-    <li className={`list-reveal skill-list-row ${surface} relative isolate grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-2 border-b border-line px-2 py-2 lg:grid-cols-[3rem_minmax(10rem,0.8fr)_minmax(12rem,1.2fr)_11rem] lg:gap-4 lg:px-3`} data-reveal-item>
+    <li className={`list-reveal skill-list-row ${surface} relative isolate grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 border-b border-line px-2 py-2 lg:grid-cols-[3rem_minmax(10rem,0.8fr)_minmax(12rem,1.2fr)_11rem] lg:gap-4 lg:px-3`} data-reveal-item>
       <span className="skill-card-plane" aria-hidden="true" />
       <span className="reveal-rule" aria-hidden="true" />
       {isLast ? <span className="list-end-light" aria-hidden="true" /> : null}
-      <div className="flex items-center gap-1" data-reveal-part="index">
-        <span className="font-mono text-[0.625rem] text-muted">{String(index + 1).padStart(2, "0")}</span>
-        <span className="hidden font-mono text-[0.625rem] text-muted lg:inline">/ {code}</span>
+      <div className="hidden items-center lg:flex" data-reveal-part="index">
+        <span className="font-mono text-[0.625rem] text-muted">{code}</span>
       </div>
       <div className="min-w-0" data-reveal-part="content">
         <div className="flex min-w-0 items-center gap-2 text-[0.625rem] leading-none">

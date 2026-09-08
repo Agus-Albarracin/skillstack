@@ -27,7 +27,7 @@ export function SkillExplorer() {
   }, [activeCategory, query]);
 
   const contentKey = visibleSkills.map((skill) => skill.name).join("|");
-  const listRef = useScrollReveal<HTMLOListElement>(contentKey);
+  const listRef = useScrollReveal<HTMLUListElement>(contentKey);
 
   async function copyCommand(skill: Skill) {
     try {
@@ -79,7 +79,7 @@ export function SkillExplorer() {
         </p>
 
         {visibleSkills.length > 0 ? (
-          <ol
+          <ul
             aria-label="Listado desplazable de skills, con un máximo de cinco elementos visibles"
             className="skill-list mt-6 border-y border-line"
             ref={listRef}
@@ -88,14 +88,13 @@ export function SkillExplorer() {
             {visibleSkills.map((skill, index) => (
               <SkillListItem
                 copied={copiedSkill === skill.name}
-                index={index}
                 isLast={index === visibleSkills.length - 1}
                 key={skill.name}
                 onCopy={copyCommand}
                 skill={skill}
               />
             ))}
-          </ol>
+          </ul>
         ) : (
           <div className="mt-8 border-y border-line py-16 text-center">
             <p className="text-xs text-coral">Sin coincidencias</p>
